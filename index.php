@@ -115,6 +115,81 @@ $rezultat = mysqli_query($conn, "SELECT * FROM destinacije");
         </div>
     </div>
 
+     <!-- Dodaj Modal HTML -->
+     <div id="dodajDestinacijuModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="post" action="#" id="dodajForm">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Dodaj destinaciju</h4>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Naziv</label>
+                            <input type="text" class="form-control" name="naziv" placeholder="Unesi naziv" required style="border-radius: 7px;">
+                        </div>
+                        <div class="form-group">
+                            <label>Datum</label>
+                            <input type="datetime-local" class="form-control" name="datum" placeholder="Unesi datum" required style="border-radius: 7px;">
+                        </div>
+                        <div class="form-group">
+                            <label>Trajanje</label>
+                            <input type="text" class="form-control" name="trajanje" placeholder="Unesi trajanje" required style="border-radius: 7px;">
+                        </div>
+                        <div class="form-group">
+                            <label>Transport</label>
+                            <input type="text" class="form-control" name="transport" placeholder="Unesi vrstu transporta" required style="border-radius: 7px;">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Otkaži">
+                        <button id="btnDodaj" type="submit" class="btn" style="background-color: #62d78f; border-radius: 7px;">Dodaj</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Izmeni Modal HTML -->
+    <div id="izmeniDestinacijuModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="izmeniForm" method="post" action="#">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Izmeni destinaciju</h4>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Id</label>
+                            <input id="id" class="form-control" name="id" value="" type="text" readonly style="border-radius: 7px;">
+                        </div>
+                        <div class="form-group">
+                            <label>Naziv</label>
+                            <input id="naziv" type="text" class="form-control" name="naziv" value="" required style="border-radius: 7px;">
+                        </div>
+                        <div class="form-group">
+                            <label>Datum</label>
+                            <input id="datum" class="form-control" name="datum" value="" type="datetime-local" required style="border-radius: 7px;">
+
+                        </div>
+                        <div class="form-group">
+                            <label>Trajanje</label>
+                            <input id="trajanje" class="form-control" name="trajanje" value="" type="text" required style="border-radius: 7px;">
+                        </div>
+                        <div class="form-group">
+                            <label>Transport</label>
+                            <input id="transport" class="form-control" name="transport" value="" type="text" required style="border-radius: 7px;">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Otkaži">
+                        <button id="btnIzmeni" type="submit" class="btn" style="background-color: #62d78f; border-radius: 7px;">Sačuvaj</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
      <!-- Obriši Modal HTML -->
      <div id="obrisiDestinacijuModal" class="modal fade" role="dialog">
