@@ -1,7 +1,7 @@
 <?php
 
 require "../config.php";
-require "../klase/destinacija.php";
+require "../modeli/destinacija.php";
 
 if (isset($_POST['id'])) {
     $myArray = Destinacija::getById($_POST['id'], $conn);

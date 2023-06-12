@@ -24,19 +24,23 @@ class Destinacija
         return $conn->query($query);
     }
 
+
     public static function getById($id, mysqli $conn)
     {
         $query = "SELECT * FROM destinacije WHERE id=$id";
-
+    
         $myObj = array();
-        if ($msqlObj = $conn->query($query)) {
-            while ($red = $msqlObj->fetch_array(1)) { 
+        if ($result = $conn->query($query)) {
+            while ($row = $result->fetch_assoc()) {
+                $myObj[] = $row;
             }
+            $result->free();
         }
-
+    
         return $myObj;
     }
 
+    
 
     public function deleteById(mysqli $conn)
     {
