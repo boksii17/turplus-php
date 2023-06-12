@@ -115,6 +115,30 @@ $rezultat = mysqli_query($conn, "SELECT * FROM destinacije");
         </div>
     </div>
 
+
+     <!-- Obriši Modal HTML -->
+     <div id="obrisiDestinacijuModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="#" method="post" id="obrisiForm">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Obriši destinaciju</h4>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Da li ste sigurni da želite da obrišete ovo?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Otkaži">
+                        <button id="btn-obrisi" formmethod="POST" class="btn" style="background-color: #62d78f; border-radius: 7px;">Obriši</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
     <?php
     include 'footer.php';
     ?>
