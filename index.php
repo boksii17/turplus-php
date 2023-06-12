@@ -1,3 +1,23 @@
+<?php
+
+require 'config.php';
+require 'modeli/destinacija.php';
+
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+$podaci = Destinacija::getAll($conn);
+if (!$podaci) {
+    echo "Nastala je greška pri preuzimanju podataka";
+    die();
+}
+
+$rezultat = mysqli_query($conn, "SELECT * FROM destinacije");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,6 +78,36 @@
                     </tr>
                 </thead>
                 <tbody>
+
+                <?php
+                    while ($red = mysqli_fetch_array($rezultat)) { //čita iz baze sve dok ima šta (dokle god red nije prazan)
+                    ?>
+                        <tr>
+                            <td>
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="cekirana" value="<?php echo $red['id']; ?> ">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </td>
+                            <td><?php echo $red["naziv"]; ?></td>
+                            <td><?php echo $red["datum"]; ?></td>
+                            <td><?php echo $red["trajanje"]; ?></td>
+                            <td><?php echo $red["transport"]; ?></td>
+                            <td>
+                            <a href="#izmeniDestinacijuModal" class="edit" data-bs-toggle="modal"><i class="btn-izmeni material-icons" data-bs-toggle="tooltip" title="Izmeni" style="color: #88c492;">&#xE254;</i></a>
+                            <a href="#obrisiDestinacijuModal" class="delete" data-bs-toggle="modal"><i class="material-icons" data-bs-toggle="tooltip" title="Obriši" style="color: #88c492;">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                    <?php
+                    
+                } //zatvaranje while petlje otvorene na liniji 111
+
+                ?>
+                <?php
+
+                //zatvori konekciju sa bazom
+                mysqli_close($conn);
+                ?>
                   
                 </tbody>
             </table>
