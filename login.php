@@ -48,7 +48,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     
     <div class="bodi" style="background-color: #88c492;">
 
-        <div class="container">
+        <div class="container"  style="background-color: #e6e6e6;">
             <form action="" method="POST" class="login-email">
                 <p class="login-text" style="font-size: 2rem; font-weight: 800;">Uloguj se</p>
                 <div class="input-group">
@@ -58,7 +58,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                     <input type="password" placeholder="Lozinka" name="password" value="<?php echo $_POST['password']; ?>" required>
                 </div>
                 <div class="input-group">
-                    <button name="submit" class="btn" style="background-color: #88c492;">Uloguj se</button>
+                <button name="submit" class="btn" style="background-color: #88c492; color: white;">Uloguj se</button>
                 </div>
                 <p class="login-register-text">Nemaš nalog? <a href="register.php" style="color: #88c492;">Registruj se ovde</a>.</p>
             </form>

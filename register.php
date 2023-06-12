@@ -60,7 +60,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
     
 
 <div class="bodi" style="background-color: #88c492;">
-        <div class="container">
+        <div class="container" style="background-color: #e6e6e6;">
             <form action="" method="POST" class="login-email">
                 <p class="login-text" style="font-size: 2rem; font-weight: 800;">Registruj se</p>
                 <div class="input-group">
@@ -76,7 +76,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
                     <input type="password" placeholder="Potvrdi lozinku" name="cpassword" value="<?php echo $_POST['cpassword']; ?>" required>
                 </div>
                 <div class="input-group">
-                    <button name="submit" class="btn" style="background-color: #88c492;">Registruj se</button>
+                <button name="submit" class="btn" style="background-color: #88c492; color: white;">Registruj se</button>
                 </div>
                 <p class="login-register-text">Već imaš nalog? <a href="login.php" style="color: #88c492;">Uloguj se ovde</a>.</p>
             </form>

@@ -8,7 +8,7 @@
 .bodi {
     width: 100%;
     min-height: 100vh;
-    background-color: #88c492;
+    background-color: #e1e6e2;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -19,7 +19,7 @@
 .bodi .container {
     width: 400px;
     min-height: 400px;
-    background: #88c492;
+    background: #e6e6e6;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .3);
     padding: 40px 30px;
@@ -44,7 +44,7 @@
 .bodi .container .login-email .input-group input {
     width: 100%;
     height: 100%;
-    border: 2px solid #98c8a0;
+    border: 2px solid #dce0dc;
     padding: 15px 20px;
     font-size: 1rem;
     border-radius: 30px;
