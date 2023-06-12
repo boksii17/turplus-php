@@ -222,6 +222,80 @@ $rezultat = mysqli_query($conn, "SELECT * FROM destinacije");
     <script src="main.js"></script>
 
 
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                $('#message').hide();
+            }, 3000);
+        });
+
+
+
+        function sortirajTabelu() {
+            var tabela, redovi, zameni, i, x, y, trebaZameniti;
+            tabela = document.getElementById("mojaTabela");
+            zameni = true;
+            
+            while (zameni) {
+                
+                zameni = false;
+                redovi = tabela.rows;
+                
+                for (i = 1; i < (redovi.length - 1); i++) {
+                    
+                    trebaZameniti = false;
+                    
+                    x = redovi[i].getElementsByTagName("TD")[1];
+                    y = redovi[i + 1].getElementsByTagName("TD")[1];
+
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        
+                        trebaZameniti = true;
+                        break;
+                    }
+                }
+                if (trebaZameniti) {
+                    
+                    redovi[i].parentNode.insertBefore(redovi[i + 1], redovi[i]);
+                    zameni = true;
+                }
+            }
+        }
+
+
+
+
+
+        
+        function pretrazi() {
+            
+            var input, filter, tabela, tr, td, i, txtVrednost;
+           
+            input = document.getElementById("mojInput");
+            filter = input.value.toUpperCase();
+            tabela = document.getElementById("mojaTabela");
+            tr = tabela.getElementsByTagName("tr");
+
+           
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtVrednost = td.textContent || td.innerText;
+                    if (txtVrednost.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+
+                    }
+                }
+            }
+
+
+        }
+    </script>
+
+
+
    
 
 </body>
